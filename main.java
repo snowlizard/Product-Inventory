@@ -1,15 +1,19 @@
+import java.net.URL;
+
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.Parent;
+import javafx.fxml.FXMLLoader;
 
 public class main extends Application {
     @Override
-    public void start(Stage stage){
-        Parent parent = FXMLLoader.load(getClass().getResource("Views/mainWindow.fxml"));
-        Scene scene = new Scene(parent);
-        stage.setTitle("Inventory Management System");
+    public void start(Stage stage) throws Exception {
+        URL url = getClass().getResource("Views/mainWindow.fxml");
+        Parent root = FXMLLoader.load(url);
+
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
         stage.show();
     }
 
